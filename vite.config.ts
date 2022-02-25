@@ -11,7 +11,7 @@ export default defineConfig({
   plugins: [
     vue({include: [/\.vue$/, /\.md$/]}),
     voie({extensions: ['vue', 'md']}),
-    markdown(),
+    markdown({headEnabled: true}),
     components({include: [/\.vue$/, /\.vue\?vue/, /\.md$/]})
   ],
   resolve: {

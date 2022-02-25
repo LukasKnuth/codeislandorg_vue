@@ -1,5 +1,8 @@
 ---
-name: An example post
+title: An example post
+meta:
+  - name: description
+    content: "An example Blog-post"
 ---
 
 # Hello World <IconCommunity />
