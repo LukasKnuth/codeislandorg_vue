@@ -20,8 +20,10 @@ export default {
     const counter = useCounterStore()
     const route = useRoute()
 
-    const initialValue = route.query["counter"] || 0
-    counter.$patch({counter: initialValue})
+    if ("counter" in route.query) {
+      const initialValue = route.query["counter"]
+      counter.$patch({counter: initialValue})
+    }
 
     return {state: counter}
   }
