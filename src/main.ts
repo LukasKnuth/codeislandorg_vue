@@ -1,15 +1,10 @@
-import { createApp } from 'vue'
+import { ViteSSG } from 'vite-ssg'
 import { createPinia } from 'pinia'
-import { createHead } from '@vueuse/head'
 
+import routes from 'voie-pages'
 import App from './App.vue'
-import router from './router'
 
-const app = createApp(App)
-const head = createHead()
-
-app.use(createPinia())
-app.use(router)
-app.use(head)
-
-app.mount('#app')
+export const createApp = ViteSSG(App, {routes: routes}, ({app}) => {
+  app.use(createPinia())
+  // See https://github.com/antfu/vite-ssg/blob/main/examples/multiple-pages-with-store/src/main.ts
+})
