@@ -1,7 +1,7 @@
 import { fileURLToPath, URL } from 'url'
 
 import vue from '@vitejs/plugin-vue'
-import voie from 'vite-plugin-voie'
+import pages from 'vite-plugin-pages'
 import markdown from 'vite-plugin-md'
 import components from 'unplugin-vue-components/vite'
 
@@ -9,7 +9,7 @@ import components from 'unplugin-vue-components/vite'
 export default {
   plugins: [
     vue({include: [/\.vue$/, /\.md$/]}),
-    voie({extensions: ['vue', 'md']}),
+    pages({extensions: ['vue', 'md']}),
     markdown({headEnabled: true}),
     components({include: [/\.vue$/, /\.vue\?vue/, /\.md$/]})
   ],

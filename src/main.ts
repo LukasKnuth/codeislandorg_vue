@@ -1,7 +1,7 @@
 import { ViteSSG } from 'vite-ssg'
 import { createPinia } from 'pinia'
 
-import routes from 'voie-pages'
+import routes from '~pages'
 import App from './App.vue'
 
 export const createApp = ViteSSG(App, {routes: routes}, ({app}) => {
