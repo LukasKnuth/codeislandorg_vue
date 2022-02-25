@@ -2,7 +2,7 @@
 name: An example post
 ---
 
-# Hello World
+# Hello World <IconCommunity />
 
 This is the long awaited example Post on my new Blog!
 
