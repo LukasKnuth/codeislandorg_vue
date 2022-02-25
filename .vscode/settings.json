@@ -1,0 +1,10 @@
+{
+  // to enable, run "Vetur: Generate grammar from vetur.grammar.customBlocks" in VS Code and reload!
+  "vetur.grammar.customBlocks": {
+    // default
+    "docs": "md",
+    "i18n": "json",
+    // extension for "<route>" in pages
+    "route": "json"
+  } 
+}
