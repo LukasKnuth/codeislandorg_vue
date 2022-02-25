@@ -1,3 +1,8 @@
+<route lang="yaml">
+meta:
+  type: app
+</route>
+
 <template>
   <span>
     <button @click="state.increment">++</button>

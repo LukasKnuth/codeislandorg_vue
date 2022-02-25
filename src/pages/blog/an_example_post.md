@@ -18,3 +18,9 @@ greet("Lukas")
 ```
 
 Some additional stuff goes here then.
+
+
+<route lang="yaml">
+meta:
+  type: blog
+</route>

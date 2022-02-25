@@ -7,3 +7,9 @@ import TheWelcome from '@/components/TheWelcome.vue'
     <TheWelcome />
   </main>
 </template>
+
+<route lang="yaml">
+name: Index
+meta:
+  standalone: true
+</route>
