@@ -10,7 +10,7 @@ export default {
   plugins: [
     vue({include: [/\.vue$/, /\.md$/]}),
     pages({extensions: ['vue', 'md']}),
-    markdown({headEnabled: true}),
+    markdown({headEnabled: false}),
     components({include: [/\.vue$/, /\.vue\?vue/, /\.md$/]})
   ],
   resolve: {

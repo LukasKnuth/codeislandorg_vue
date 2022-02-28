@@ -9,7 +9,8 @@ import TheWelcome from '@/components/TheWelcome.vue'
 </template>
 
 <route lang="yaml">
-name: Index
 meta:
-  standalone: true
+  type: standalone
+  title: Landing
+  description: Welcome to CodeIsland
 </route>

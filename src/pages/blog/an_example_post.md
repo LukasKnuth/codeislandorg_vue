@@ -1,9 +1,9 @@
----
-title: An example post
+<route lang="yaml">
 meta:
-  - name: description
-    content: "An example Blog-post"
----
+  type: blog
+  title: An example post
+  description: Descriptive text here
+</route>
 
 # Hello World <IconCommunity />
 
@@ -18,9 +18,3 @@ greet("Lukas")
 ```
 
 Some additional stuff goes here then.
-
-
-<route lang="yaml">
-meta:
-  type: blog
-</route>

@@ -1,6 +1,8 @@
 <route lang="yaml">
 meta:
   type: app
+  title: Counter
+  description: Count your stuff!
 </route>
 
 <template>
