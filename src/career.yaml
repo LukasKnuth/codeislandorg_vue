@@ -1,4 +1,4 @@
-- start: April 2020
+- start: 2020-04
   company: BetterDoc
   position: Senior Full Stack Developer
   description: |
@@ -7,9 +7,10 @@
     Designed and implemented services using micro-frontends based on requirements from colleagues.
 
     Took quick ownership of cloud architecture and kubernetes cluster. Extended internal tooling and CI/CD pipelines.
-- start: March 2018
-  end: March 2020
+- start: 2018-03
+  end: 2020-03
   position: Full Stack Web Developer
+  company: ImagineOn
   description: |
     My responsibilities changed as the company shifted to more IoT related projects.
 
