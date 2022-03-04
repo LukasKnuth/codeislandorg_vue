@@ -3,11 +3,13 @@ import { fileURLToPath, URL } from 'url'
 import vue from '@vitejs/plugin-vue'
 import pages from 'vite-plugin-pages'
 import markdown from 'vite-plugin-md'
+import yaml from '@rollup/plugin-yaml'
 import components from 'unplugin-vue-components/vite'
 
 // https://vitejs.dev/config/
 export default {
   plugins: [
+    yaml(),
     vue({include: [/\.vue$/, /\.md$/]}),
     pages({extensions: ['vue', 'md']}),
     markdown({headEnabled: false}),

@@ -1,0 +1,16 @@
+- start: April 2020
+  company: BetterDoc
+  position: Senior Full Stack Developer
+  description: |
+    Built tools to support medical professionals in finding the best doctors for patients.
+
+    Designed and implemented services using micro-frontends based on requirements from colleagues.
+
+    Took quick ownership of cloud architecture and kubernetes cluster. Extended internal tooling and CI/CD pipelines.
+- start: March 2018
+  end: March 2020
+  position: Full Stack Web Developer
+  description: |
+    My responsibilities changed as the company shifted to more IoT related projects.
+
+    I transitioned into the leading role on Web Development, building scalable real-time applications for managing IoT devices deployed in the field.
