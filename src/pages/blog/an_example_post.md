@@ -3,6 +3,7 @@ meta:
   type: blog
   title: An example post
   description: Descriptive text here
+  published: 2022-02-21T12:30
 </route>
 
 # Hello World <IconCommunity />
