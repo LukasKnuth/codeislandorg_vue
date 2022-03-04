@@ -9,16 +9,9 @@ meta:
   <div>
     <label><input type="checkbox" v-model="filters.blogOnly"> Blog Posts only</label>
 
-    <div class="card" v-for="e in entries">
-      <div v-if="e.type === 'career'">
-        <h3>{{e.entry.position}} at {{e.entry.company}}</h3>
-        <p>From {{e.entry.start}} to {{e.entry.end || "now"}}</p>
-        <p>{{e.entry.description}}</p>
-      </div>
-      <div v-else-if="e.type === 'route'">
-        <h3><router-link :to="e.entry">{{e.entry.meta.title}}</router-link></h3>
-        <p>{{e.entry.meta.description}}</p>
-      </div>
+    <div v-for="e in entries">
+      <BlogCard :key="e.id" :route="e.entry" v-if="e.type === 'route'"></BlogCard>
+      <CareerCard :key="e.id" :entry="e.entry" v-else-if="e.type === 'career'"></CareerCard>
     </div>
   </div>
 </template>
@@ -26,16 +19,27 @@ meta:
 <script setup>
 import { useRouter } from "vue-router"
 import { computed, reactive } from "vue"
+import { parseISO } from "date-fns"
+
 import career from "@/career.yaml"
 
 const router = useRouter()
-const routes = router.getRoutes().map(route => {
-  return {type: "route", entry: route}
-})
+const routes = router.getRoutes()
+  .filter(({meta}) => ['blog'].includes(meta.type))
+  .map(r => {
+    const published = parseISO(r.meta.published)
+    const meta = {...r.meta, published}
+    const route = {...r, meta}
+    return {type: "route", sortTime: published, id: route.path, entry: route}
+  })
 const jobs = career.map(e => {
-  return {type: "career", entry: e}
+  const start = e.start ? parseISO(e.start) : undefined
+  const end = e.end ? parseISO(e.end) : undefined
+  return {type: "career", sortTime: start, id: e.start, entry: {...e, start, end}}
 })
-const everything = routes.concat(jobs) // todo sort this...
+const everything = routes.concat(jobs).sort((a, b) => {
+  return (b.sortTime ?? 0) - (a.sortTime ?? 0)
+})
 
 const filters = reactive({
   blogOnly: false
@@ -53,7 +57,10 @@ const entries = computed(() => {
 
 <style>
 .card {
-  border: 1px solid #ccc;
-  border-radius: 20px;
+  border-radius: 5px;
+  padding: 6px 10px;
+  margin-top: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 </style>
